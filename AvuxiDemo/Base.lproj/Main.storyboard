@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AvuxiDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-y1-8dg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="dxy-Uu-tOE"/>
+                                </connections>
+                            </mapView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-LN-Agn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gE3-mh-A6a">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RLg-nj-Pi9">
+                                <rect key="frame" x="87.5" y="30" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="200" id="BQz-ZQ-xB7"/>
+                                    <constraint firstAttribute="height" constant="44" id="wQc-ul-qQv"/>
+                                </constraints>
+                                <segments>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlPoiChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SSB-eO-Dg4"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DoE-LN-Agn" firstAttribute="bottom" secondItem="RLg-nj-Pi9" secondAttribute="bottom" constant="10" id="0XR-O8-ciV"/>
+                            <constraint firstItem="l3L-y1-8dg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1kP-L4-t1f"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="l3L-y1-8dg" secondAttribute="bottom" id="7OP-AH-1XL"/>
+                            <constraint firstItem="RLg-nj-Pi9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="T1c-HK-jG0"/>
+                            <constraint firstItem="RLg-nj-Pi9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="XBQ-oh-qhU"/>
+                            <constraint firstItem="DoE-LN-Agn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y9E-q7-NmA"/>
+                            <constraint firstAttribute="topMargin" secondItem="l3L-y1-8dg" secondAttribute="top" id="dA3-Rk-wvi"/>
+                            <constraint firstAttribute="trailing" secondItem="l3L-y1-8dg" secondAttribute="trailing" id="gSC-0R-nlh"/>
+                            <constraint firstItem="DoE-LN-Agn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qQR-jL-HKO"/>
+                            <constraint firstItem="RLg-nj-Pi9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vTt-Xc-tNW"/>
+                            <constraint firstAttribute="trailing" secondItem="DoE-LN-Agn" secondAttribute="trailing" id="zIE-YZ-QhF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="l3L-y1-8dg" id="J7Q-Dc-AVM"/>
+                        <outlet property="segmentedControlPoiCategory" destination="RLg-nj-Pi9" id="L4Y-50-axm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
