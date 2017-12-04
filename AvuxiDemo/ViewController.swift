@@ -72,7 +72,7 @@ class ViewController: UIViewController, MKMapViewDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CenterMap(lat: 41.3845, lon: 2.165, zoom: 0.5)
+        CenterMap(lat: 41.3845, lon: 2.165, zoom: 0.2)
         setupSegmentedControl()
     }
 
